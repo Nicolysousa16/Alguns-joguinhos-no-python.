@@ -1,0 +1,28 @@
+import random 
+
+opcoes = ['pedra','papel', 'tesoura']
+
+print ('Seja Bem-vindo ao Jogo Pedra, Papel e Tesoura')
+
+while True:
+    jogador = input(' Escolha: Pedra, Papel, Tesoura ou Sair: ').lower()
+    
+    if jogador == 'sair':
+        print ('Jogo Encerrado!')
+        break
+    
+    if jogador not in opcoes:
+        print ('Escolha inválida. Tente novamente!')
+        continue
+    
+    computador = random.choice(opcoes)
+    print (f'O computador escolheu: {computador.capitalize()}')
+
+    if jogador == computador:
+        print ('DEU EMPATE!!')
+  
+    elif (jogador == 'tesoura' and computador == 'papel') or (jogador == 'papel' and computador == 'pedra') or (jogador == 'pedra' and computador == 'tesoura'):
+        print ('VOCÊ GANHOU!')
+
+    else:
+        print ('VOCÊ PERDEU!')
